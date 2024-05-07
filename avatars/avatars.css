@@ -1,0 +1,93 @@
+/* 가장 작은 요소부터 */
+/* figure요소를 사용해서 이미지를 담는다.
+avatar 은 img 태그 사용.
+on/offline 은 figcaption에 담기. //span 유저이름, on/off
+포지션 앨러티브 포지션 앱솔루트 바텀 라이트
+ */
+:root {
+  --base-font-famaily: "SUIT Variable", sans-serif;
+}
+
+body {
+  font-family: var(--base);
+}
+
+.avatar {
+  --size: 64px;
+
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  img {
+    inline-size: inherit;
+    block-size: inherit;
+    border-radius: 50%;
+  }
+
+  figcaption {
+    --size: 18px;
+    inline-size: var(--size, 18px);
+    block-size: var(--size, 18px);
+    background-color: #DBDBDB;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #fff;
+    box-sizing: inherit;
+  }
+  &.is-online {
+    figcaption {
+      background-color: #4CFE88;
+    }
+  }
+}
+
+/* member layout */
+
+.member {
+  --avata-size: 64px;
+  --avata-count: 4;
+  --avata-spacing: 10px;
+  --container-size: calc((var(--avata-size) * var(--avata-count)) + (var(--avata-spacing) * (var(--avata-count) * 2)));
+
+  inline-size: var(--container-size);
+  margin: 50px auto;
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0;
+    display: flow-root;
+  }
+
+  li {
+    margin: 10px;
+    float: left;
+  }
+}
+
+
+@supports (display: flex){
+  .member{
+
+    ul{
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    li{
+      float: none;
+    }
+
+    /* li:nth-child(odd){
+      order: 1;
+    } */
+  }
+
+}
+
+

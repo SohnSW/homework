@@ -1,2 +1,7 @@
 # homework
-테킷 프론트엔드 스쿨 10기 과제 저장
+테킷 프론트엔드 스쿨 10기 과제 저장소
+
+
+### 링크
+
+- [Avatars.md로 연결](avatars/avatars.md)
